@@ -56,7 +56,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body { margin: 0; font-family: var(--font-body); background: var(--bg); color: var(--ink); line-height: 1.65; }
 
     .app { max-width: 1020px; margin: auto; padding: 32px 24px 80px; }
@@ -972,7 +971,6 @@ function render() {
 function showFeed(){
   document.getElementById('pantallaFeed').hidden = false;
   document.getElementById('pantallaCatalogo').hidden = true;
-  window.scrollTo({top:0, behavior:'auto'});
 }
 
 function showCatalogo(prog){
@@ -985,7 +983,6 @@ function showCatalogo(prog){
   currentQuery = '';
   searchClear.classList.remove('visible');
   render();
-  window.scrollTo({top:0, behavior:'auto'});
 }
 
 document.querySelectorAll('#pantallaFeed .prog-chip').forEach(card => {
@@ -1058,7 +1055,7 @@ document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modalOverlay.cl
 // ══════════════════════════════════════════════
 const toTop = document.getElementById('toTop');
 window.addEventListener('scroll',()=>toTop.classList.toggle('show',window.scrollY>400),{passive:true});
-toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+toTop.addEventListener('click',()=>window.scrollTo(0,0));
 
 // ══════════════════════════════════════════════
 // QUIZ ADAPTATIVO — lógica de árbol
@@ -1262,28 +1259,10 @@ function mostrarResultado() {
 }
 
 function irATaller(id, programa) {
-  // 1. Cerrar el modal
+  // Cerrar el recomendador y abrir la línea correspondiente.
+  // Sin desplazamientos automáticos ni efectos de scroll.
   closeRec();
-  // 2. Abrir la pantalla de catálogo para esa línea
   showCatalogo(programa);
-  // 3. Scroll al taller con pequeño delay para que el DOM se pinte
-  setTimeout(() => {
-    const el = document.getElementById('f-' + id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Efecto highlight temporal en la tarjeta
-      const card = el.nextElementSibling;
-      if (card) {
-        card.style.transition = 'box-shadow .3s, border-color .3s';
-        card.style.boxShadow = '0 0 0 3px var(--purple-400), 0 14px 40px rgba(109,40,217,.2)';
-        card.style.borderColor = 'var(--purple-400)';
-        setTimeout(() => {
-          card.style.boxShadow = '';
-          card.style.borderColor = '';
-        }, 2200);
-      }
-    }
-  }, 350);
 }
 function resetRec(){ openRec(); }
 
