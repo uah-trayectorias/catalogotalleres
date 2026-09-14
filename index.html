@@ -565,7 +565,7 @@
       <h1 class="site-title">Catálogo de Talleres de Apoyo al Aprendizaje</h1>
       <p class="site-desc">Este catálogo reúne la oferta de talleres de apoyo al aprendizaje de la Unidad de Trayectoria Estudiantil. Los talleres abordan necesidades frecuentes del proceso formativo universitario y pueden desarrollarse con cursos completos o grupos de estudiantes. Cada propuesta organiza un conjunto de aprendizajes, estrategias y contenidos orientados a fortalecer habilidades académicas clave en lectura, escritura, gestión del aprendizaje y pensamiento matemático.</p>
       <div class="site-stats">
-        <div><div class="site-stat-num">13</div><div class="site-stat-label">talleres</div></div>
+        <div><div class="site-stat-num">15</div><div class="site-stat-label">talleres</div></div>
         <div><div class="site-stat-num">3</div><div class="site-stat-label">líneas de apoyo</div></div>
       </div>
     </div>
@@ -583,19 +583,19 @@
         <span class="prog-chip-title">Todos</span>
         <p class="prog-chip-desc collapsed">El catálogo completo de Fortalecimiento Académico, para quienes prefieren revisar todas las opciones de una vez antes de decidir por dónde partir con su curso.</p>
         <button type="button" class="prog-desc-toggle">Ver más</button>
-        <span class="prog-chip-count">13 talleres →</span>
+        <span class="prog-chip-count">15 talleres →</span>
       </div>
       <div class="prog-chip" data-prog="LEA+" role="button" tabindex="0">
         <span class="prog-chip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
         <span class="prog-chip-title">LEA+</span>
-        <p class="prog-chip-desc collapsed">La lectura y la escritura académicas constituyen un proceso formativo que continúa en la universidad, en diálogo con las convenciones y exigencias de cada disciplina. LEA+ acompaña ese proceso desde el ingreso al texto académico hasta la argumentación con fuentes especializadas, entendiendo la escritura no solo como un medio de evaluación, sino como una herramienta para pensar, comprender y construir conocimiento.</p>
+        <p class="prog-chip-desc collapsed">La lectura y la escritura académicas se desarrollan progresivamente en la universidad y adquieren formas particulares en cada disciplina. LEA+ acompaña ese proceso desde cómo abordar y comprender textos complejos hasta interpretar consignas, organizar la escritura, argumentar, integrar fuentes y utilizar sistemas de citación con rigor e integridad académica.</p>
         <button type="button" class="prog-desc-toggle">Ver más</button>
-        <span class="prog-chip-count">5 talleres →</span>
+        <span class="prog-chip-count">7 talleres →</span>
       </div>
       <div class="prog-chip" data-prog="GESTI-ON" role="button" tabindex="0">
         <span class="prog-chip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
         <span class="prog-chip-title">GESTI-ON</span>
-        <p class="prog-chip-desc collapsed">Entrar a la universidad implica transformar la forma de aprender: ya no basta con seguir un ritmo impuesto, sino que es necesario construir autonomía para comprender el sentido de las exigencias del proceso formativo. GESTI-ON acompaña ese tránsito, conectando la gestión cotidiana del aprendizaje con el desarrollo de estrategias de organización, estudio, motivación y autorregulación, para que cada estudiante pueda tomar decisiones sobre su propio proceso académico.</p>
+        <p class="prog-chip-desc collapsed">Aprender en la universidad exige anticipar la carga académica, seleccionar estrategias de estudio pertinentes, sostener el trabajo y monitorear la propia comprensión. GESTI-ON fortalece estas capacidades para que las y los estudiantes puedan tomar decisiones más conscientes, realistas y autónomas sobre su proceso de aprendizaje.</p>
         <button type="button" class="prog-desc-toggle">Ver más</button>
         <span class="prog-chip-count">4 talleres →</span>
       </div>
@@ -692,86 +692,104 @@ const FORMS_TALLER_PARAM = 'rcff59a36c2f04d2db1568243dd733120';
 const FORMS_PROGRAMA_PARAM = 'rad3820474142482f82bd7fdbb085907c';
 
 // ══════════════════════════════════════════════════════════════
-// DATASET — 13 talleres · 3 líneas
+// DATASET — 15 talleres · 3 líneas
 // ══════════════════════════════════════════════════════════════
 const DATA = [
   // ── LEA+ · LECTURA ──────────────────────────────────────
   { id:1, programa:"LEA+", modulo:"Lectura",
-    titulo:"Estrategias iniciales para abordar textos académicos",
-    subtitulo:"Estrategias para enfrentar textos extensos o complejos con seguridad",
-    presentacion:"Abordar un texto académico extenso o especializado requiere anticipar el contenido, reconocer su estructura, definir un propósito de lectura y activar conocimientos previos. Este taller ofrece herramientas de prelectura y exploración textual para iniciar la lectura de manera más organizada.",
-    necesidades:["Bloqueo o ansiedad frente a textos académicos largos o con vocabulario especializado","Tendencia a evitar lecturas o posponerlas indefinidamente","Desconocimiento de la estructura del texto académico y sus convenciones genéricas"],
-    aprendizaje:["Aplicar estrategias de prelectura para anticipar contenido y activar conocimientos previos","Reconocer la estructura y las convenciones del texto académico según su género","Abordar textos complejos con mayor autonomía, seguridad y eficiencia lectora"],
-    cuando:["Cuando los estudiantes evitan leer o dejan las lecturas para último momento","Cuando no saben por dónde empezar al enfrentar un texto extenso o denso","En asignaturas con alta carga de lectura bibliográfica obligatoria"]
+    titulo:"Cómo abordar textos académicos complejos",
+    subtitulo:"Entrar a textos extensos o especializados con una estrategia clara",
+    presentacion:"Antes de comprender en profundidad un texto académico es necesario saber cómo entrar en él. Este taller trabaja estrategias de prelectura, reconocimiento del género, propósito de lectura, exploración de la estructura y activación de conocimientos previos para enfrentar textos extensos o especializados de manera más organizada.",
+    necesidades:["Bloqueo o ansiedad frente a textos académicos largos, densos o con vocabulario especializado","Dificultad para saber por dónde comenzar una lectura universitaria","Tendencia a leer linealmente desde la primera palabra, sin explorar previamente el texto ni definir un propósito"],
+    aprendizaje:["Definir un propósito de lectura de acuerdo con la tarea o necesidad académica","Aplicar estrategias de prelectura para anticipar contenido, estructura y posibles dificultades","Reconocer rasgos del género y de la organización del texto para tomar decisiones antes de comenzar la lectura intensiva"],
+    cuando:["Cuando los estudiantes evitan o postergan lecturas porque las perciben como demasiado extensas o complejas","Al inicio de asignaturas con alta carga de lectura académica","Cuando el principal problema no es todavía comprender el contenido, sino lograr entrar al texto con una estrategia"]
   },
   { id:2, programa:"LEA+", modulo:"Lectura",
-    titulo:"Lectura crítica de fuentes académicas",
-    subtitulo:"Leer, evaluar y dialogar con las fuentes de forma crítica",
-    presentacion:"Leer críticamente implica reconocer el propósito de una fuente, identificar sus afirmaciones principales, analizar la evidencia y considerar supuestos o limitaciones. El taller ofrece estrategias para examinar la postura del autor y relacionar distintas fuentes.",
-    necesidades:["Uso acrítico de fuentes: no cuestionan la validez ni la postura del autor","Dificultad para distinguir hechos de opiniones y reconocer sesgos en los textos","Dificultad para evaluar la pertinencia y solidez de las fuentes"],
-    aprendizaje:["Aplicar lectura crítica para distinguir hechos, opiniones, sesgos e intención del autor","Evaluar la solidez de los argumentos y la pertinencia de las fuentes consultadas","Leer textos en diálogo: establecer relaciones y tensiones entre distintas posturas"],
-    cuando:["Cuando los estudiantes citan fuentes sin evaluarlas ni contextualizarlas","En cursos con trabajos de investigación, ensayos argumentativos o análisis de textos","En niveles intermedios y avanzados donde se espera pensamiento crítico y postura propia"]
+    titulo:"Comprender y organizar información en textos académicos",
+    subtitulo:"Jerarquizar ideas, establecer relaciones y construir una representación global del texto",
+    presentacion:"Comprender un texto académico supone ir más allá de reconocer información aislada. El taller trabaja identificación y jerarquización de ideas, relaciones conceptuales, inferencias, vocabulario disciplinar y formas de organizar la información para construir una representación global y recuperable de lo leído.",
+    necesidades:["Lectura fragmentada en la que se comprende cada párrafo por separado, pero se pierde la idea global","Dificultad para distinguir ideas centrales, secundarias y ejemplos","Detención de la lectura ante conceptos o vocabulario disciplinar desconocido","Dificultad para organizar y recuperar posteriormente la información leída"],
+    aprendizaje:["Identificar y jerarquizar ideas centrales y secundarias en textos académicos","Establecer relaciones entre conceptos, apartados y argumentos para construir una comprensión global","Aplicar estrategias de inferencia y contextualización frente a vocabulario especializado","Organizar la información mediante esquemas, notas, mapas u otras representaciones pertinentes al propósito de lectura"],
+    cuando:["Cuando los estudiantes leen, pero luego no pueden explicar el sentido global del texto","Cuando subrayan o toman apuntes de casi toda la información sin jerarquizarla","En asignaturas con textos conceptualmente densos o con alto rigor terminológico"]
   },
   { id:3, programa:"LEA+", modulo:"Lectura",
-    titulo:"Estrategias de comprensión de textos académicos y disciplinares",
-    subtitulo:"Jerarquizar ideas centrales y comprender el vocabulario disciplinar",
-    presentacion:"Comprender textos disciplinares requiere identificar ideas centrales, establecer relaciones y construir significado frente a vocabulario especializado. El taller integra jerarquización, inferencias, relaciones conceptuales y construcción de glosarios contextualizados.",
-    necesidades:["Lectura lineal y fragmentada, sin estrategia de jerarquización de ideas","Dificultad para distinguir ideas principales de información secundaria","Detención o abandono de la lectura ante vocabulario técnico o conceptos desconocidos","Dependencia del docente para interpretar lecturas especializadas de la disciplina"],
-    aprendizaje:["Aplicar estrategias activas de identificación y jerarquización de ideas en textos académicos","Construir una comprensión global del texto, más allá de la lectura fragmentaria","Usar estrategias de inferencia y contextualización para construir significado en textos especializados","Desarrollar un glosario disciplinar activo como herramienta de comprensión progresiva"],
-    cuando:["Cuando los estudiantes leen pero no logran responder preguntas sobre el contenido","En asignaturas con alto rigor terminológico (derecho, ciencias, filosofía, economía, etc.)","Al inicio del semestre, como habilidad transversal y preventiva"]
+    titulo:"Lectura crítica y diálogo entre fuentes",
+    subtitulo:"Analizar argumentos, evaluar evidencia y poner distintas fuentes en relación",
+    presentacion:"La lectura crítica implica comprender lo que una fuente sostiene y, al mismo tiempo, examinar cómo construye su postura. El taller trabaja propósito, argumentos, evidencia, supuestos y limitaciones, incorporando estrategias para contrastar fuentes y reconocer acuerdos, tensiones y diferencias entre autores.",
+    necesidades:["Uso acrítico de fuentes: la información se acepta sin examinar cómo está fundamentada","Dificultad para distinguir la posición del autor, sus argumentos y la evidencia que utiliza","Lectura de cada fuente de manera aislada, sin establecer relaciones entre autores o perspectivas","Dificultad para evaluar la pertinencia de una fuente para una tarea académica determinada"],
+    aprendizaje:["Reconocer propósito, postura, argumentos y evidencia en una fuente académica","Evaluar la pertinencia y solidez de afirmaciones y evidencias de acuerdo con el contexto de la tarea","Identificar supuestos, alcances y limitaciones relevantes del texto","Relacionar distintas fuentes mediante acuerdos, complementaciones, tensiones o desacuerdos"],
+    cuando:["En cursos con ensayos, revisiones bibliográficas, trabajos de investigación o análisis de textos","Cuando los estudiantes citan fuentes, pero no las evalúan ni las ponen en relación","En niveles en que se espera una postura propia fundamentada en la literatura disciplinar"]
   },
+
   // ── LEA+ · ESCRITURA ────────────────────────────────────
   { id:4, programa:"LEA+", modulo:"Escritura",
-    titulo:"Organización, estructura y revisión de textos académicos",
-    subtitulo:"Planificar, estructurar y revisar textos con criterio",
-    presentacion:"La escritura académica incluye planificación, redacción, revisión y edición. El taller ofrece criterios para organizar ideas y mejorar progresivamente un borrador en contenido, estructura, cohesión y adecuación académica.",
-    necesidades:["Textos con ideas desorganizadas, sin introducción clara ni conclusión fundamentada","Dificultad para planificar antes de escribir: comienzan sin saber adónde van","Revisión limitada a la ortografía, sin atender la calidad argumentativa ni la coherencia","Entrega de borradores sin revisión antes de entregar"],
-    aprendizaje:["Diseñar la estructura de ensayos, informes y trabajos con introducción, desarrollo y cierre","Planificar el texto antes de redactar, usando esquemas, mapas o borradores estructurados","Aplicar criterios de revisión crítica para mejorar fondo, estructura y estilo del texto","Desarrollar el hábito de revisar y editar en múltiples pasadas con criterios distintos"],
-    cuando:["Cuando los textos entregados son confusos, desordenados o sin estructura reconocible","Cuando los textos tienen errores que habrían sido fáciles de corregir con revisión","Antes de evaluaciones escritas importantes: trabajos finales, informes de práctica, ensayos"]
+    titulo:"De la consigna al plan de escritura",
+    subtitulo:"Comprender qué pide una tarea y transformar la consigna en decisiones de escritura",
+    presentacion:"Muchas dificultades de escritura comienzan antes de redactar: cuando no se comprende con precisión qué producto se solicita, para qué se escribe, qué acciones exige la consigna o qué criterios orientarán la evaluación. Este taller enseña a analizar consignas y convertirlas en un plan concreto de trabajo y escritura.",
+    necesidades:["Inicio de tareas sin comprender completamente qué producto debe entregarse","Respuestas que desarrollan el tema general, pero no realizan las acciones solicitadas por la consigna","Dificultad para reconocer verbos de tarea, propósito, género, destinatario, fuentes o criterios de evaluación","Bloqueo inicial porque la tarea se percibe como demasiado amplia o poco clara"],
+    aprendizaje:["Descomponer una consigna identificando producto, propósito, acciones, contenidos, condiciones y criterios relevantes","Interpretar los verbos de la tarea y traducirlos en operaciones concretas de lectura, análisis o escritura","Relacionar la consigna con la pauta o rúbrica cuando esta se encuentra disponible","Construir un plan de escritura que anticipe estructura, pasos, fuentes y prioridades antes de redactar"],
+    cuando:["Antes de trabajos escritos de mediana o alta complejidad","Cuando las entregas no responden completamente a lo solicitado pese a mostrar conocimiento del tema","Cuando el grupo manifiesta que no sabe cómo empezar una tarea o qué espera exactamente el docente"]
   },
   { id:5, programa:"LEA+", modulo:"Escritura",
-    titulo:"Argumentación académica y uso ético de fuentes",
-    subtitulo:"Construir argumentos propios y citar con rigor y ética",
-    presentacion:"Según las necesidades de la asignatura, el taller puede priorizar la construcción argumentativa, la integración de fuentes o las normas de citación requeridas. Se recomienda hablar de problemas de integridad académica en vez de plagio involuntario.",
-    necesidades:["Textos descriptivos que reproducen información sin construir postura ni argumento propio","Uso superficial o decorativo de fuentes: citan sin integrar ni analizar críticamente","Inseguridad o errores en el uso de normas de citación y referenciación","Dificultades con integridad académica en el manejo de fuentes"],
-    aprendizaje:["Construir y defender argumentos académicos fundamentados en evidencia relevante","Integrar fuentes de forma analítica, no solo como citas de autoridad o relleno","Aplicar normas de citación requeridas de forma precisa y consistente","Construir argumentos propios que dialoguen con la literatura sin incurrir en plagio"],
-    cuando:["Cuando los textos son descriptivos y no argumentativos, aunque el docente lo haya solicitado","Cuando hay errores frecuentes o inconsistentes en las referencias bibliográficas","En cursos de niveles intermedios o avanzados donde se exige postura y análisis crítico"]
+    titulo:"Organización y revisión de textos académicos",
+    subtitulo:"Construir una estructura clara y revisar el texto más allá de la corrección superficial",
+    presentacion:"Un texto académico se construye progresivamente. El taller trabaja la organización global de las ideas, la función de cada apartado y la revisión del borrador mediante criterios diferenciados de contenido, estructura, coherencia, cohesión y legibilidad, evitando reducir la revisión a la ortografía.",
+    necesidades:["Textos con ideas pertinentes, pero organizadas sin una progresión clara","Introducciones, desarrollos o cierres que no cumplen una función reconocible en el conjunto del texto","Párrafos que acumulan información sin relaciones explícitas entre las ideas","Revisión centrada casi exclusivamente en ortografía y presentación"],
+    aprendizaje:["Organizar el texto de acuerdo con su propósito, género y progresión de ideas","Construir párrafos y apartados con funciones reconocibles dentro del desarrollo global","Aplicar una revisión por capas que distinga contenido, estructura, coherencia, cohesión y aspectos de legibilidad","Tomar decisiones de reescritura a partir de criterios, en lugar de limitarse a corregir errores locales"],
+    cuando:["Cuando los textos resultan difíciles de seguir aunque contengan información pertinente","Durante la producción de un borrador que todavía puede ser reorganizado y mejorado","Antes de evaluaciones escritas importantes, informes, ensayos o trabajos finales"]
   },
+  { id:6, programa:"LEA+", modulo:"Escritura",
+    titulo:"Argumentar e integrar fuentes en la escritura académica",
+    subtitulo:"Construir una postura propia y hacer dialogar la evidencia con el argumento",
+    presentacion:"Argumentar académicamente no consiste en acumular opiniones ni insertar citas. El taller trabaja la formulación de una postura, la construcción de razones y evidencias y la integración de fuentes dentro del razonamiento propio, de modo que las voces de otros autores cumplan una función clara en el argumento.",
+    necesidades:["Textos predominantemente descriptivos cuando la tarea exige tomar y fundamentar una posición","Afirmaciones u opiniones que aparecen sin razones o evidencia suficiente","Citas incorporadas como bloques aislados que no se explican ni se relacionan con el argumento","Dependencia de la autoridad de una fuente en lugar de construcción de una voz académica propia"],
+    aprendizaje:["Formular una postura o tesis pertinente y sostenible frente a una pregunta o problema","Construir relaciones explícitas entre afirmaciones, razones y evidencia","Integrar citas, paráfrasis y referencias a fuentes explicando su función dentro del argumento","Poner las fuentes en diálogo con la propia voz y con otras perspectivas relevantes"],
+    cuando:["En ensayos, informes argumentativos, discusiones bibliográficas u otras tareas que exigen una postura fundamentada","Cuando los textos resumen autores, pero no construyen un argumento propio","Cuando aparecen numerosas citas, pero su relación con la idea desarrollada no es clara"]
+  },
+  { id:7, programa:"LEA+", modulo:"Escritura",
+    titulo:"Citación, referencias e integridad académica",
+    subtitulo:"Usar las fuentes con trazabilidad, precisión y responsabilidad académica",
+    presentacion:"El uso académico de fuentes requiere distinguir con claridad las ideas propias de las tomadas de otros trabajos y permitir que cada fuente pueda ser identificada y recuperada. El taller trabaja citación, paráfrasis, referencias e integridad académica con ejemplos ajustados al sistema requerido por la asignatura.",
+    necesidades:["Inconsistencias entre las fuentes citadas en el texto y las incluidas en la lista de referencias","Dificultad para decidir cuándo citar, parafrasear o incorporar una cita textual","Paráfrasis demasiado cercanas al texto original o uso de información sin atribución suficiente","Errores recurrentes en los elementos y el formato de las referencias bibliográficas"],
+    aprendizaje:["Distinguir situaciones que requieren atribución explícita de la fuente","Construir citas y paráfrasis que diferencien con claridad la voz propia de las ideas recuperadas","Mantener correspondencia y trazabilidad entre citas en el texto y lista de referencias","Aplicar de manera consistente las convenciones del sistema de citación solicitado y reconocer su relación con la integridad académica"],
+    cuando:["Antes de trabajos que requieren búsqueda y uso de bibliografía","Cuando existen errores reiterados de citación o referencias en un curso","Cuando es necesario fortalecer prácticas de integridad académica desde una perspectiva formativa y no solamente sancionatoria"]
+  },
+
   // ── GESTI-ON ─────────────────────────────────────────────
-  { id:6, programa:"GESTI-ON", modulo:"Gestión del Aprendizaje",
-    titulo:"Planificación del semestre académico",
-    subtitulo:"Anticipar el semestre y construir un plan de estudio sostenible",
-    presentacion:"El taller ayuda a visualizar evaluaciones, detectar periodos de mayor carga y construir una planificación semanal que incluya estudio, descanso, desplazamientos, responsabilidades personales y márgenes para imprevistos.",
-    necesidades:["Trabajo reactivo y sin planificación: solo estudian cuando la evaluación está encima","Sobrecarga acumulada por no anticipar ni distribuir la carga académica del semestre","Dificultad para equilibrar múltiples asignaturas con distintos ritmos y exigencias"],
-    aprendizaje:["Construir una visión panorámica del semestre: evaluaciones, plazos y cargas por asignatura","Diseñar un plan de estudio semanal realista, sostenible y adaptable a imprevistos","Identificar señales tempranas de sobrecarga y desarrollar estrategias preventivas"],
-    cuando:["Al inicio del semestre, como herramienta preventiva de organización","Cuando hay atrasos frecuentes en entregas o estudiantes que siempre están apagando incendios","Cuando el grupo reporta alto estrés académico o sensación de desborde permanente"]
-  },
-  { id:7, programa:"GESTI-ON", modulo:"Gestión del Aprendizaje",
-    titulo:"Estrategias de estudio efectivas",
-    subtitulo:"Estudiar con técnicas activas y ajustadas a cada evaluación",
-    presentacion:"El taller permite seleccionar y practicar estrategias activas según el tipo de contenido y evaluación, incluyendo práctica de recuperación, elaboración, autoevaluación, práctica espaciada y organización de la información.",
-    necesidades:["Uso de estrategias pasivas (releer, subrayar, copiar) que no generan comprensión profunda","Desconocimiento de técnicas específicas para distintos tipos de evaluación universitaria","Inversión de tiempo sin resultados: estudian mucho pero no logran demostrar lo aprendido"],
-    aprendizaje:["Identificar y seleccionar estrategias de estudio según el tipo de evaluación y contenido","Aplicar técnicas activas: elaboración, autoevaluación, mapas conceptuales, práctica espaciada","Optimizar el tiempo de estudio: estudiar con mayor eficiencia y mejor retención"],
-    cuando:["Cuando los resultados son bajos a pesar de que los estudiantes reportan haber estudiado","Antes de períodos de evaluaciones intensas o exámenes finales","Cuando el grupo tiene dificultades específicas con un tipo de evaluación (oral, casos, desarrollo)"]
-  },
   { id:8, programa:"GESTI-ON", modulo:"Gestión del Aprendizaje",
-    titulo:"De la procrastinación a la acción: gestión del tiempo de estudio",
-    subtitulo:"Iniciar tareas y sostener el ritmo de trabajo sin depender de la urgencia",
-    presentacion:"La postergación puede relacionarse con sobrecarga, falta de claridad, cansancio, dificultad para iniciar, factores emocionales o hábitos poco sostenibles. El taller ofrece herramientas para definir primeros pasos, fragmentar tareas y reducir la dependencia de la urgencia.",
-    necesidades:["Postergación sistemática de tareas y estudios, incluso cuando hay tiempo disponible","Dificultad para iniciar una tarea: el primer paso siempre es el más difícil","Dependencia de la urgencia o la presión para activarse"],
-    aprendizaje:["Comprender los mecanismos emocionales que subyacen a la procrastinación académica","Aplicar técnicas concretas para iniciar y mantener el foco: fragmentación, temporizadores, entornos","Construir rutinas y hábitos de trabajo que no dependan de la motivación ni la urgencia"],
-    cuando:["Cuando hay un patrón reiterado de entregas tardías o trabajos hechos la noche anterior","Cuando los estudiantes reportan que no logran sentarse a estudiar aunque tienen tiempo","En cursos con proyectos extensos que requieren avance sostenido en el tiempo"]
+    titulo:"Planificar la carga académica y el estudio",
+    subtitulo:"Anticipar exigencias y distribuir el trabajo de manera realista",
+    presentacion:"Planificar no consiste únicamente en llenar una agenda. El taller ayuda a visualizar evaluaciones y tareas, estimar cargas, detectar semanas críticas y traducir esa información en una planificación semanal que considere estudio, descanso, desplazamientos, responsabilidades personales y márgenes para imprevistos.",
+    necesidades:["Trabajo reactivo: las tareas se abordan recién cuando la fecha de entrega está muy próxima","Acumulación de evaluaciones y entregas que podrían haberse anticipado","Planificaciones ideales que no consideran tiempos reales, descanso, responsabilidades personales o imprevistos","Dificultad para decidir qué priorizar cuando coinciden varias exigencias académicas"],
+    aprendizaje:["Construir una visión panorámica de evaluaciones, plazos y cargas a lo largo del semestre","Estimar y distribuir tareas de acuerdo con su complejidad, prioridad y tiempo disponible","Diseñar una planificación semanal realista, flexible y sostenible","Reconocer anticipadamente períodos de sobrecarga y tomar decisiones preventivas"],
+    cuando:["Al inicio del semestre o de un período académico exigente","Cuando se repiten atrasos, acumulaciones o semanas de trabajo excesivo","Cuando el problema principal es anticipar y distribuir la carga, más que lograr iniciar una tarea específica"]
   },
   { id:9, programa:"GESTI-ON", modulo:"Gestión del Aprendizaje",
-    titulo:"Autorregulación del aprendizaje",
-    subtitulo:"Monitorear y ajustar el propio proceso de estudio",
-    presentacion:"El taller ofrece herramientas de automonitoreo y autoevaluación para valorar la comprensión antes, durante y después del estudio, y ajustar decisiones a partir de esa evidencia.",
-    necesidades:["Estudio automático y sin reflexión: no monitorean si están comprendiendo realmente","Dificultad para identificar cuándo no entienden algo y cómo buscar ayuda o ajustar","Falta de criterios para autoevaluarse y saber si están preparados para una evaluación"],
-    aprendizaje:["Desarrollar conciencia metacognitiva: observar y regular el propio proceso de aprendizaje","Aplicar estrategias de automonitoreo y autoevaluación durante el estudio","Ajustar el enfoque de estudio según la evidencia de comprensión o dificultad detectada"],
-    cuando:["Cuando los estudiantes se sorprenden con resultados de evaluaciones que creían tener","En grupos con dificultades para identificar sus propias brechas de aprendizaje","Como complemento a cualquier taller de estrategias de estudio o planificación académica"]
+    titulo:"Estrategias para aprender y preparar evaluaciones",
+    subtitulo:"Elegir formas de estudio activas según lo que se necesita aprender y demostrar",
+    presentacion:"No todas las tareas de aprendizaje requieren estudiar de la misma manera. El taller permite analizar el tipo de contenido y las demandas de una evaluación para seleccionar, practicar y combinar estrategias activas de recuperación, elaboración, organización, práctica espaciada y autoevaluación.",
+    necesidades:["Uso predominante de estrategias pasivas como releer, subrayar o copiar sin comprobar aprendizaje","Inversión de muchas horas de estudio con resultados inferiores a los esperados","Uso de la misma estrategia para contenidos y evaluaciones muy diferentes","Preparación centrada en reconocer información, aunque la evaluación exige explicar, aplicar, resolver o argumentar"],
+    aprendizaje:["Analizar qué tipo de aprendizaje y desempeño exige una evaluación","Seleccionar estrategias de estudio de acuerdo con el contenido, la tarea y la evidencia disponible sobre la propia comprensión","Aplicar técnicas activas como práctica de recuperación, elaboración, organización y práctica espaciada","Construir una secuencia de preparación que combine estudio, práctica y comprobación del aprendizaje"],
+    cuando:["Cuando los resultados son bajos pese a una alta inversión de tiempo de estudio","Antes de evaluaciones que exigen algo más que recordar información","Cuando el grupo necesita ampliar su repertorio de estrategias y aprender a elegir entre ellas"]
+  },
+  { id:10, programa:"GESTI-ON", modulo:"Gestión del Aprendizaje",
+    titulo:"Iniciar y sostener el trabajo académico",
+    subtitulo:"Pasar de la intención a la acción sin depender de la urgencia",
+    presentacion:"A veces el problema no es desconocer qué hacer ni carecer completamente de tiempo, sino lograr empezar y sostener el trabajo. El taller analiza barreras de inicio y persistencia —como tareas poco claras, sobrecarga, cansancio, evitación o dependencia de la urgencia— y ensaya estrategias concretas para reducir la fricción y mantener avances posibles.",
+    necesidades:["Postergación reiterada aun cuando existe tiempo disponible","Dificultad para iniciar tareas amplias, ambiguas o percibidas como demasiado exigentes","Dependencia de la presión de último momento para activarse","Inicio frecuente de sesiones de estudio que se interrumpen rápidamente o no generan continuidad"],
+    aprendizaje:["Identificar las barreras concretas que dificultan iniciar o sostener una tarea académica","Transformar tareas amplias en acciones iniciales pequeñas, específicas y ejecutables","Configurar condiciones de trabajo que reduzcan distracciones y fricción de inicio","Construir rutinas y mecanismos de continuidad que no dependan exclusivamente de la motivación o la urgencia"],
+    cuando:["Cuando los estudiantes saben qué deben hacer, pero reportan que no consiguen empezar","En proyectos o trabajos extensos que requieren continuidad durante varias semanas","Cuando las entregas de última hora se han convertido en un patrón recurrente"]
+  },
+  { id:11, programa:"GESTI-ON", modulo:"Gestión del Aprendizaje",
+    titulo:"¿Estoy aprendiendo? Monitoreo y autorregulación del estudio",
+    subtitulo:"Comprobar la comprensión y ajustar las decisiones antes de recibir la nota",
+    presentacion:"Estudiar no garantiza haber aprendido. El taller desarrolla estrategias para observar el propio proceso antes, durante y después del estudio, generar evidencia de comprensión, detectar brechas y decidir cuándo mantener, cambiar o complementar una estrategia, incluyendo la búsqueda oportuna de ayuda.",
+    necesidades:["Sensación de dominio basada en familiaridad con el material, sin una comprobación efectiva de comprensión","Sorpresa frecuente frente a resultados de evaluaciones que se creían bien preparadas","Dificultad para identificar qué parte de un contenido no se comprende y qué hacer frente a esa dificultad","Persistencia en una estrategia de estudio aunque no esté produciendo resultados"],
+    aprendizaje:["Distinguir sensación de familiaridad de evidencia real de comprensión o desempeño","Aplicar estrategias de automonitoreo y autoevaluación durante el estudio","Identificar brechas específicas y formular acciones para abordarlas","Ajustar estrategias, tiempos o apoyos a partir de la evidencia recogida sobre el propio aprendizaje"],
+    cuando:["Cuando los estudiantes estudian, pero no pueden anticipar con realismo su nivel de preparación","Después de evaluaciones que muestran una diferencia importante entre expectativa y desempeño","Como complemento a talleres de planificación o estrategias de estudio, cuando se necesita fortalecer la toma de decisiones sobre el propio aprendizaje"]
   },
   // ── MATEHACK ─────────────────────────────────────────────
-  { id:10, programa:"MATEHACK", modulo:"Pensamiento Matemático",
+  { id:12, programa:"MATEHACK", modulo:"Pensamiento Matemático",
     titulo:"Fortalecimiento de habilidades matemáticas fundamentales",
     subtitulo:"Consolidar las bases matemáticas con comprensión, no memorización",
     presentacion:"El taller fortalece habilidades fundamentales mediante resolución, representación, explicación y verificación. Los contenidos específicos se seleccionan de acuerdo con las necesidades del curso o grupo.",
@@ -779,7 +797,7 @@ const DATA = [
     aprendizaje:["Consolidar las bases matemáticas con comprensión, no solo con memorización de pasos","Resolver operaciones fundamentales de forma ordenada, precisa y con verificación del resultado","Recuperar seguridad y confianza frente a los contenidos matemáticos de la carrera"],
     cuando:["Cuando hay errores constantes y sistemáticos en operaciones que debieran estar consolidadas","Al inicio de asignaturas cuantitativas, como diagnóstico y nivelación preventiva","Cuando los estudiantes expresan bloqueo, miedo o rechazo frente a las matemáticas"]
   },
-  { id:11, programa:"MATEHACK", modulo:"Pensamiento Matemático",
+  { id:13, programa:"MATEHACK", modulo:"Pensamiento Matemático",
     titulo:"Resolución de ecuaciones y sistemas",
     subtitulo:"Resolver ecuaciones y sistemas con comprensión del proceso",
     presentacion:"El taller puede centrarse en ecuaciones lineales, cuadráticas o sistemas, según los conocimientos previos y necesidades de la asignatura. Se recomienda hablar de situaciones cuantitativas representadas mediante ecuaciones.",
@@ -787,7 +805,7 @@ const DATA = [
     aprendizaje:["Resolver ecuaciones lineales, cuadráticas y sistemas 2×2 con comprensión y orden","Elegir el método más eficiente según el tipo de ecuación o sistema presentado","Verificar los resultados como práctica habitual para detectar y corregir errores propios"],
     cuando:["En asignaturas que requieren modelamiento matemático o resolución de problemas cuantitativos","Cuando los errores en álgebra son el principal obstáculo en el desempeño de la asignatura","Como preparación para evaluaciones con contenido algebraico de cualquier disciplina"]
   },
-  { id:12, programa:"MATEHACK", modulo:"Pensamiento Matemático",
+  { id:14, programa:"MATEHACK", modulo:"Pensamiento Matemático",
     titulo:"Trigonometría y geometría aplicada",
     subtitulo:"Aplicar la trigonometría y la geometría a problemas reales",
     presentacion:"El taller desarrolla criterios para representar información, seleccionar una herramienta geométrica o trigonométrica e interpretar el resultado. El énfasis se ajusta a las necesidades de la asignatura.",
@@ -795,7 +813,7 @@ const DATA = [
     aprendizaje:["Aplicar el Teorema de Pitágoras y las razones trigonométricas a problemas concretos y aplicados","Resolver triángulos rectángulos y oblicuángulos usando las herramientas adecuadas a cada caso","Interpretar los resultados en contexto, conectando la matemática con situaciones reales"],
     cuando:["En asignaturas de física, ingeniería, arquitectura o cualquier disciplina con contenido geométrico","Cuando los errores se deben más a no saber qué fórmula usar que a no saber calcular","Como refuerzo previo a evaluaciones con problemas de aplicación geométrica o trigonométrica"]
   },
-  { id:13, programa:"MATEHACK", modulo:"Pensamiento Matemático",
+  { id:15, programa:"MATEHACK", modulo:"Pensamiento Matemático",
     titulo:"Estadística descriptiva e interpretación de datos",
     subtitulo:"Interpretar datos y extraer conclusiones fundamentadas",
     presentacion:"El taller desarrolla comprensión de medidas descriptivas y lectura crítica de tablas y gráficos. Se recomienda hablar de escalas inadecuadas, representaciones engañosas o conclusiones insuficientemente respaldadas.",
@@ -834,7 +852,7 @@ function filteredData() {
 // ══════════════════════════════════════════════
 const KICKER = {
   'LEA+':'Lectura y escritura académica',
-  'GESTI-ON':'Planificación del aprendizaje',
+  'GESTI-ON':'Gestión del aprendizaje',
   'MATEHACK':'Pensamiento matemático'
 };
 const ICONS = {'LEA+':'📖','GESTI-ON':'📋','MATEHACK':'🔢'};
@@ -1061,21 +1079,23 @@ const QUIZ_TREE = {
     pregunta: '1 · ¿Qué tipo de dificultad observas con mayor frecuencia en tu grupo?',
     opciones: [
       { val:'lectura_escritura', label:'Dificultades con textos académicos (leer, escribir, argumentar, citar)', emoji:'📖', next:'p2_lea' },
-      { val:'gestion',          label:'Dificultades para organizar el estudio y el tiempo', emoji:'🗓️', next:'p2_gest' },
+      { val:'gestion',          label:'Dificultades para gestionar la carga, estudiar, iniciar tareas o monitorear el aprendizaje', emoji:'🗓️', next:'p2_gest' },
       { val:'matematica',       label:'Dificultades matemáticas o con datos cuantitativos', emoji:'🔢', next:'p2_mate' },
     ]
   },
 
-  // PASO 2a — LEA+ (mapea 1 a 1 con los 5 talleres de la línea)
+  // PASO 2a — LEA+ (mapea 1 a 1 con los 7 talleres de la línea)
   p2_lea: {
     id: 'p2',
     pregunta: '2 · ¿Cuál describe mejor la dificultad principal?',
     opciones: [
-      { val:'ingreso',              label:'Evitan o se bloquean frente a textos largos o complejos, les cuesta empezar a leer', emoji:'😰', next:'p3_momento' },
-      { val:'critica',              label:'Leen, pero usan las fuentes sin evaluarlas ni cuestionarlas', emoji:'🎯', next:'p3_momento' },
-      { val:'comprension',          label:'No identifican las ideas centrales, o el vocabulario técnico los detiene', emoji:'🔍', next:'p3_momento' },
-      { val:'estructura_revision',  label:'Escriben sin estructura clara, y entregan el primer borrador sin revisar', emoji:'🏗️', next:'p3_momento' },
-      { val:'argumentacion_citas',  label:'Describen sin argumentar, o citan mal y con riesgo de plagio involuntario', emoji:'💬', next:'p3_momento' },
+      { val:'abordaje',             label:'Se bloquean o no saben por dónde comenzar frente a textos largos, densos o especializados', emoji:'🚪', next:'p3_momento' },
+      { val:'comprension',          label:'Leen, pero no logran jerarquizar ideas, relacionarlas o recuperar lo central del texto', emoji:'🔍', next:'p3_momento' },
+      { val:'critica',              label:'Comprenden las fuentes, pero no las evalúan ni establecen diálogo entre distintas posturas', emoji:'🎯', next:'p3_momento' },
+      { val:'consigna',             label:'Tienen dificultades para comprender qué pide una tarea y convertir la consigna en un plan de escritura', emoji:'🧭', next:'p3_momento' },
+      { val:'organizacion_revision',label:'Las ideas son pertinentes, pero el texto queda desorganizado o se entrega sin una revisión profunda', emoji:'🏗️', next:'p3_momento' },
+      { val:'argumentacion_fuentes',label:'Describen o resumen fuentes, pero les cuesta construir una postura e integrarlas en su argumento', emoji:'💬', next:'p3_momento' },
+      { val:'citacion_integridad',  label:'Presentan dificultades con citas, paráfrasis, referencias o atribución responsable de las fuentes', emoji:'🔗', next:'p3_momento' },
     ]
   },
 
@@ -1084,10 +1104,10 @@ const QUIZ_TREE = {
     id: 'p2',
     pregunta: '2 · ¿Cuál describe mejor la dificultad principal?',
     opciones: [
-      { val:'planificacion', label:'No planifican: se desbordan con evaluaciones y siempre van a última hora', emoji:'🗓️', next:'p3_momento' },
-      { val:'estrategias',   label:'Estudian mucho pero sin resultados: usan estrategias pasivas o ineficaces', emoji:'📉', next:'p3_momento' },
-      { val:'procrastina',   label:'Procrastinan: saben lo que deben hacer pero no logran empezar', emoji:'⏳', next:'p3_momento' },
-      { val:'metacognicion', label:'No monitorean su comprensión: se sorprenden con las notas', emoji:'🤔', next:'p3_momento' },
+      { val:'planificacion', label:'Se desbordan con evaluaciones y entregas porque les cuesta anticipar, priorizar y distribuir la carga', emoji:'🗓️', next:'p3_momento' },
+      { val:'estrategias',   label:'Estudian mucho, pero las estrategias que usan no se ajustan a lo que necesitan aprender o demostrar', emoji:'📉', next:'p3_momento' },
+      { val:'inicio',        label:'Saben qué deben hacer, pero les cuesta empezar o sostener el trabajo sin depender de la urgencia', emoji:'⏳', next:'p3_momento' },
+      { val:'monitoreo',     label:'Estudian sin comprobar realmente si están comprendiendo y se sorprenden con los resultados', emoji:'🤔', next:'p3_momento' },
     ]
   },
 
@@ -1130,9 +1150,9 @@ const QUIZ_TREE = {
 function calcularRecomendacion() {
   const a = quizAnswers;
   const MAPA = {
-    lectura_escritura: { ingreso:1, critica:2, comprension:3, estructura_revision:4, argumentacion_citas:5 },
-    gestion:           { planificacion:6, estrategias:7, procrastina:8, metacognicion:9 },
-    matematica:        { fundamentos:10, ecuaciones:11, geometria:12, estadistica:13 },
+    lectura_escritura: { abordaje:1, comprension:2, critica:3, consigna:4, organizacion_revision:5, argumentacion_fuentes:6, citacion_integridad:7 },
+    gestion:           { planificacion:8, estrategias:9, inicio:10, monitoreo:11 },
+    matematica:        { fundamentos:12, ecuaciones:13, geometria:14, estadistica:15 },
   };
   const grupo = MAPA[a.p1] || {};
   const id = grupo[a.p2] || Object.values(grupo)[0] || 1;
