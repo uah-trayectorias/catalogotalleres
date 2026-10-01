@@ -1972,6 +1972,324 @@
   }
 </style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="ute-v18-clean-actions">
+  /* =========================================================
+     LIMPIEZA DEFINITIVA DEL SISTEMA DE DESPLEGABLES
+     Un solo componente, sin pseudo-elementos heredados.
+     ========================================================= */
+
+  /* Mantener la portada más compacta */
+  #portalAcceso .portal-hero-body{
+    padding:22px 28px !important;
+  }
+  #portalAcceso .portal-hero-body h1{
+    font-size:clamp(2.15rem,4.8vw,3.45rem) !important;
+    line-height:1.04 !important;
+    margin-bottom:13px !important;
+    max-width:15ch;
+  }
+  #portalAcceso .portal-hero-body p{
+    font-size:.98rem !important;
+    line-height:1.58 !important;
+    margin:0 0 11px !important;
+    max-width:80ch !important;
+  }
+
+  /* Texto docente: más oscuro y legible */
+  .ute-how-docente .ute-how-lead{
+    color:#272033 !important;
+    text-align:justify !important;
+    line-height:1.62 !important;
+    max-width:80ch !important;
+  }
+
+  /* CONTENEDORES */
+  details.ute-fold-services,
+  details.ute-fold-student-faq,
+  details.ute-action-fold{
+    display:block !important;
+    width:100% !important;
+    margin:16px 0 !important;
+    padding:0 !important;
+    border:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    overflow:visible !important;
+  }
+
+  /* Desactivar para siempre iconos heredados generados por CSS */
+  details.ute-fold-services > summary::before,
+  details.ute-fold-services > summary::after,
+  details.ute-fold-student-faq > summary::before,
+  details.ute-fold-student-faq > summary::after,
+  details.ute-action-fold > summary::before,
+  details.ute-action-fold > summary::after{
+    content:none !important;
+    display:none !important;
+  }
+
+  /* BOTÓN */
+  details > summary.ute-action-summary{
+    box-sizing:border-box !important;
+    width:100% !important;
+    max-width:none !important;
+    min-height:66px !important;
+    margin:0 !important;
+    padding:12px 14px !important;
+
+    display:grid !important;
+    grid-template-columns:auto minmax(0,1fr) auto !important;
+    align-items:center !important;
+    column-gap:14px !important;
+
+    list-style:none !important;
+    cursor:pointer !important;
+
+    background:linear-gradient(105deg,#56358f 0%,#6e46b4 52%,#60409d 100%) !important;
+    color:#fff !important;
+    border:1px solid #56358f !important;
+    border-radius:18px !important;
+
+    box-shadow:
+      0 10px 25px rgba(83,51,140,.22),
+      inset 0 1px 0 rgba(255,255,255,.10) !important;
+
+    font-family:var(--font-body) !important;
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease,
+      filter .18s ease !important;
+    position:relative !important;
+  }
+
+  details > summary.ute-action-summary::-webkit-details-marker{
+    display:none !important;
+  }
+
+  /* CHIP: señal explícita de acción */
+  .ute-action-summary .ute-action-chip{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:34px !important;
+    padding:7px 11px !important;
+    border-radius:999px !important;
+
+    background:#fff !important;
+    color:#5c3a97 !important;
+
+    font-size:.69rem !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+    letter-spacing:.075em !important;
+    white-space:nowrap !important;
+
+    box-shadow:0 3px 8px rgba(31,21,53,.13) !important;
+    animation:uteChipAttention 2.4s ease-in-out infinite;
+  }
+
+  /* TEXTO */
+  .ute-action-summary .ute-action-label{
+    display:block !important;
+    min-width:0 !important;
+    color:#fff !important;
+    font-size:1rem !important;
+    font-weight:800 !important;
+    line-height:1.3 !important;
+    text-align:left !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  /* CHEVRON explícito en HTML */
+  .ute-action-summary .ute-action-icon{
+    display:grid !important;
+    place-items:center !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:50% !important;
+
+    background:rgba(255,255,255,.20) !important;
+    border:1px solid rgba(255,255,255,.22) !important;
+    color:#fff !important;
+
+    font-size:1.55rem !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+
+    box-shadow:0 0 0 0 rgba(255,255,255,.14) !important;
+    animation:uteArrowAttention 1.35s ease-in-out infinite;
+    transition:transform .22s ease, background .18s ease !important;
+  }
+
+  details > summary.ute-action-summary:hover{
+    transform:translateY(-2px) !important;
+    filter:brightness(1.055) !important;
+    box-shadow:
+      0 15px 32px rgba(83,51,140,.28),
+      0 0 0 3px rgba(110,70,180,.08) !important;
+  }
+
+  details > summary.ute-action-summary:hover .ute-action-icon{
+    background:rgba(255,255,255,.30) !important;
+  }
+
+  details[open] > summary.ute-action-summary .ute-action-icon{
+    transform:rotate(180deg) !important;
+    animation:none !important;
+  }
+
+  /* CUERPO ABIERTO */
+  details.ute-fold-services > .ute-fold-body,
+  details.ute-fold-student-faq > .ute-fold-body,
+  details.ute-action-fold > .ute-fold-body{
+    margin:9px 0 0 !important;
+    padding:18px !important;
+
+    background:#fff !important;
+    border:1px solid var(--border) !important;
+    border-radius:16px !important;
+    box-shadow:0 8px 20px rgba(15,23,42,.055) !important;
+  }
+
+  /* Las dos rutas, parejas */
+  .ute-route-buttons{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:14px !important;
+    align-items:start !important;
+    margin-top:14px !important;
+  }
+
+  /* FAQ estudiante ocupa exactamente el ancho del contenido */
+  #comoFuncionaEstudiantes details.ute-fold-student-faq{
+    width:100% !important;
+    max-width:none !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  /* Recuperar buen contraste de fichas en modo oscuro */
+  #portalEstudiante[data-theme="dark"] .support-card,
+  #portalEstudiante[data-theme="dark"] .student-panel,
+  #portalEstudiante[data-theme="dark"] .booking-placeholder{
+    background:#2a2144 !important;
+    border-color:rgba(255,255,255,.18) !important;
+    color:#fff !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .support-card *,
+  #portalEstudiante[data-theme="dark"] .student-panel *,
+  #portalEstudiante[data-theme="dark"] .support-action p{
+    color:#fff !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] details.ute-fold-student-faq > .ute-fold-body{
+    background:#2a2144 !important;
+    border-color:rgba(255,255,255,.18) !important;
+    color:#fff !important;
+  }
+
+  #portalEstudiante[data-theme="contrast"] .support-card,
+  #portalEstudiante[data-theme="contrast"] .student-panel,
+  #portalEstudiante[data-theme="contrast"] .booking-placeholder,
+  #portalEstudiante[data-theme="contrast"] details.ute-fold-student-faq > .ute-fold-body{
+    background:#000 !important;
+    color:#fff !important;
+    border:2px solid #fff !important;
+  }
+
+  #portalEstudiante[data-theme="contrast"] .support-card *,
+  #portalEstudiante[data-theme="contrast"] .student-panel *{
+    color:#fff !important;
+  }
+
+  /* Animación visible pero sobria */
+  @keyframes uteArrowAttention{
+    0%,100%{
+      transform:translateY(-2px);
+      box-shadow:0 0 0 0 rgba(255,255,255,.14);
+    }
+    50%{
+      transform:translateY(4px);
+      box-shadow:0 0 0 9px rgba(255,255,255,.055);
+    }
+  }
+
+  @keyframes uteChipAttention{
+    0%,100%{
+      transform:scale(1);
+      box-shadow:0 3px 8px rgba(31,21,53,.13);
+    }
+    50%{
+      transform:scale(1.045);
+      box-shadow:0 4px 12px rgba(31,21,53,.19);
+    }
+  }
+
+  @media(max-width:900px){
+    .ute-route-buttons{
+      grid-template-columns:1fr !important;
+    }
+  }
+
+  @media(max-width:720px){
+    #portalAcceso .portal-hero-body{
+      padding:20px 18px !important;
+    }
+
+    details > summary.ute-action-summary{
+      min-height:62px !important;
+      padding:10px 11px !important;
+      column-gap:9px !important;
+    }
+
+    .ute-action-summary .ute-action-chip{
+      min-height:30px !important;
+      padding:6px 8px !important;
+      font-size:.62rem !important;
+    }
+
+    .ute-action-summary .ute-action-label{
+      font-size:.9rem !important;
+    }
+
+    .ute-action-summary .ute-action-icon{
+      width:36px !important;
+      height:36px !important;
+      min-width:36px !important;
+      font-size:1.3rem !important;
+    }
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .ute-action-summary .ute-action-chip,
+    .ute-action-summary .ute-action-icon{
+      animation:none !important;
+    }
+  }
+</style>
+
 </head>
 <body class="portal-mode">
 
@@ -2014,10 +2332,15 @@
   </div>
 
 
-  <section class="ute-home-services" aria-labelledby="uteHomeServicesTitle">
+  
+  <details class="ute-fold ute-fold-services">
+    <summary class="ute-action-summary"><span class="ute-action-chip">VER SERVICIOS</span><span class="ute-action-label">Servicios de la Unidad</span><span class="ute-action-icon" aria-hidden="true">⌄</span></summary>
+    <div class="ute-fold-body">
+      <p class="ute-fold-caption">Aquí puedes revisar los principales apoyos disponibles y acceder directamente al sistema de agendamiento de apoyos individuales.</p>
+      <section class="ute-home-services" aria-labelledby="uteHomeServicesTitle">
     <div class="ute-home-services-head ute-home-services-head-split">
       <div>
-        <p class="ute-home-services-kicker">Servicios de la Unidad</p>
+        <p class="ute-home-services-kicker">Ver servicios de la Unidad</p>
         <h2 id="uteHomeServicesTitle">¿Qué apoyos puedes encontrar aquí?</h2>
         <p>La Unidad de Trayectoria Estudiantil ofrece apoyos para estudiantes, cursos y carreras, a través de distintas modalidades de acompañamiento.</p>
       </div>
@@ -2060,6 +2383,8 @@
       </article>
     </div>
   </section>
+    </div>
+  </details>
 
 </div>
 
@@ -2122,7 +2447,9 @@
         <div class="ute-route-step"><div class="ute-route-dot">5</div><div><strong>Definimos continuidad</strong><small>A veces basta una sesión y otras veces tiene sentido seguir trabajando.</small></div></div>
       </div>
 
-      <div class="ute-certainties">
+      <details class="ute-fold ute-fold-student-faq">
+        <summary class="ute-action-summary"><span class="ute-action-chip">ABRIR</span><span class="ute-action-label">Información importante y preguntas frecuentes</span><span class="ute-action-icon" aria-hidden="true">⌄</span></summary>
+        <div class="ute-fold-body"><div class="ute-certainties">
         <span class="ute-certainty">✓ Sin costo</span>
         <span class="ute-certainty">✓ No necesitas derivación</span>
         <span class="ute-certainty">✓ Puedes venir para fortalecer habilidades</span>
@@ -2135,22 +2462,10 @@
         <details><summary>¿Tengo que llevar algo?</summary><p>Si tienes una tarea, texto, pauta, prueba anterior, ejercicio o material relacionado con lo que quieres trabajar, puede ser útil llevarlo. Si no tienes nada, también podemos comenzar desde lo que nos cuentes.</p></details>
         <details><summary>¿Cuántas veces puedo venir?</summary><p>A veces una sesión es suficiente y otras veces tiene sentido continuar. La continuidad se acuerda contigo según la necesidad.</p></details>
       </div>
+        </div>
+      </details>
     </section>
 
-    <section class="quick-needs" aria-labelledby="quickNeedsTitle">
-      <div class="quick-needs-top">
-        <div>
-          <h2 id="quickNeedsTitle">Parte por lo que quieres trabajar</h2>
-          <p>No necesitas conocer el nombre del programa para encontrar un apoyo.</p>
-        </div>
-      </div>
-      <div class="quick-needs-grid" role="group" aria-label="Accesos rápidos por necesidad">
-        <button class="quick-need-btn" type="button" data-student-need="GESTI-ON"><span>🧠</span><strong>Organizarme y estudiar mejor</strong><small>Planificación, estrategias de estudio y autorregulación.</small></button>
-        <button class="quick-need-btn" type="button" data-student-need="LEA+"><span>📖</span><strong>Lectura, escritura y comunicación</strong><small>Lectura, escritura académica y comunicación.</small></button>
-        <button class="quick-need-btn" type="button" data-student-need="MATEHACK"><span>🔢</span><strong>Matemática o Física</strong><small>Apoyo en habilidades y contenidos cuantitativos.</small></button>
-        <button class="quick-need-btn" type="button" data-student-need="ALL"><span>✨</span><strong>Ver todos los apoyos</strong><small>Explora la oferta completa.</small></button>
-      </div>
-    </section>
 
     <div class="student-catalog-toolbar">
       <div>
@@ -2223,54 +2538,62 @@
   <!-- ══ PANTALLA 1 — FEED DE LÍNEAS (landing) ══ -->
   <section id="pantallaFeed" class="pantalla">
     
+
 <section class="ute-how ute-how-docente" id="comoFuncionaEquipos" aria-labelledby="comoFuncionaEquiposTitulo">
   <div class="ute-how-head"><div>
     <p class="ute-how-kicker">Para equipos directivos y docentes</p>
     <h2 id="comoFuncionaEquiposTitulo">¿Cómo funcionan los talleres y sesiones?</h2>
-    <p class="ute-how-lead">Hay dos maneras de solicitar apoyo. La primera es elegir una sesión del catálogo. La segunda es pedir un apoyo a medida, cuando la necesidad requiere definir modalidad, ajustes o una secuencia de trabajo. En ambos casos, al completar el formulario desde la Unidad te contactamos para coordinar.</p>
+    <p class="ute-how-lead">Hay dos maneras de solicitar apoyo. La primera es agendar una sesión del catálogo. La segunda es pedir un apoyo a medida, cuando la necesidad requiere definir modalidad, ajustes o una secuencia de trabajo. En ambos casos, desde la Unidad te contactamos para coordinar.</p>
   </div></div>
 
-  <div class="ute-dual-route">
-    <article class="ute-route-card">
-      <div class="ute-route-card-top">
-        <span class="ute-route-badge">Ruta 1</span>
-        <h3>Elegir una sesión del catálogo</h3>
-        <p>Esta ruta sirve cuando ya identificaste una sesión que hace sentido para tu curso, grupo o carrera. En este caso, las actividades del catálogo se presentan como <strong>sesiones únicas</strong>.</p>
+  <div class="ute-route-buttons">
+    <details class="ute-fold ute-action-fold ute-route-toggle route1">
+      <summary class="ute-action-summary"><span class="ute-action-chip">RUTA 1</span><span class="ute-action-label">Agendar taller del catálogo</span><span class="ute-action-icon" aria-hidden="true">⌄</span></summary>
+      <div class="ute-fold-body">
+        <article class="ute-route-card">
+          <div class="ute-route-card-top">
+            <span class="ute-route-badge">Ruta 1</span>
+            <h3>Elegir una sesión del catálogo</h3>
+            <p>Esta ruta sirve cuando ya identificaste una sesión que hace sentido para tu curso, grupo o carrera. En este caso, las actividades del catálogo se presentan como <strong>sesiones únicas</strong>.</p>
+          </div>
+          <ol class="ute-mini-steps">
+            <li><strong>Exploras el catálogo</strong><span>Revisas las líneas y eliges la sesión que mejor responde a tu necesidad.</span></li>
+            <li><strong>Completas el formulario</strong><span>Indicas la sesión que te interesa y entregas datos básicos del curso o grupo.</span></li>
+            <li><strong>Te contactamos</strong><span>Desde la Unidad nos comunicamos contigo para confirmar y coordinar.</span></li>
+            <li><strong>Acordamos la implementación</strong><span>Definimos fecha, modalidad y aspectos logísticos, como el espacio.</span></li>
+            <li><strong>Realizamos la sesión</strong><span>Implementamos el apoyo con el curso o grupo solicitado.</span></li>
+          </ol>
+        </article>
       </div>
-      <ol class="ute-mini-steps">
-        <li><strong>Exploras el catálogo</strong><span>Revisas las líneas y eliges la sesión que mejor responde a tu necesidad.</span></li>
-        <li><strong>Completas el formulario</strong><span>Indicas la sesión que te interesa y entregas datos básicos del curso o grupo.</span></li>
-        <li><strong>Te contactamos</strong><span>Desde la Unidad nos comunicamos contigo para confirmar y coordinar.</span></li>
-        <li><strong>Acordamos la implementación</strong><span>Definimos fecha, modalidad y aspectos logísticos, como el espacio.</span></li>
-        <li><strong>Realizamos la sesión</strong><span>Implementamos el apoyo con el curso o grupo solicitado.</span></li>
-      </ol>
-    </article>
+    </details>
 
-    <article class="ute-route-card">
-      <div class="ute-route-card-top">
-        <span class="ute-route-badge">Ruta 2</span>
-        <h3>Solicitar un apoyo a medida</h3>
-        <p>Esta ruta sirve cuando más que una sesión específica, tienes una necesidad o desafío formativo y quieres que definamos contigo la mejor forma de abordarlo.</p>
+    <details class="ute-fold ute-action-fold ute-route-toggle route2">
+      <summary class="ute-action-summary"><span class="ute-action-chip">RUTA 2</span><span class="ute-action-label">Necesito un taller personalizado</span><span class="ute-action-icon" aria-hidden="true">⌄</span></summary>
+      <div class="ute-fold-body">
+        <article class="ute-route-card">
+          <div class="ute-route-card-top">
+            <span class="ute-route-badge">Ruta 2</span>
+            <h3>Solicitar un apoyo a medida</h3>
+            <p>Esta ruta sirve cuando más que una sesión específica, tienes una necesidad o desafío formativo y quieres que definamos contigo la mejor forma de abordarlo.</p>
+          </div>
+          <ol class="ute-mini-steps">
+            <li><strong>Identificas la necesidad</strong><span>Piensas qué está ocurriendo con el curso o qué habilidad te gustaría fortalecer.</span></li>
+            <li><strong>Nos escribes</strong><span>Usa el botón de esta ruta. Se abrirá un correo con una pauta breve para contarnos el contexto.</span></li>
+            <li><strong>Te contactamos</strong><span>Desde la Unidad revisamos la solicitud y nos comunicamos contigo para profundizar en la necesidad.</span></li>
+            <li><strong>Definimos juntos la modalidad</strong><span>Acordamos si conviene una sesión, un taller integrado a una clase, un bloque libre o una secuencia de trabajo.</span></li>
+            <li><strong>Coordinamos e implementamos</strong><span>Definimos fecha, espacio y condiciones para llevar a cabo el apoyo.</span></li>
+          </ol>
+          <div class="ute-route-contact">
+            <p><strong>¿Esta es tu ruta?</strong> Escríbenos con el contexto de la necesidad. El correo ya incluye una pauta con la información que necesitamos para comenzar.</p>
+            <a class="ute-route-email-btn" href="mailto:fpulgar@uahurtado.cl?subject=Solicitud%20de%20apoyo%20a%20medida">✉ Escríbenos para solicitar apoyo a medida →</a>
+            <small>El mensaje se abrirá en tu aplicación de correo y podrás editarlo antes de enviarlo.<br><strong>Si el botón no funciona, escríbenos a:</strong> <a href="mailto:fpulgar@uahurtado.cl">fpulgar@uahurtado.cl</a></small>
+          </div>
+        </article>
       </div>
-      <ol class="ute-mini-steps">
-        <li><strong>Identificas la necesidad</strong><span>Piensas qué está ocurriendo con el curso o qué habilidad te gustaría fortalecer.</span></li>
-        <li><strong>Nos escribes</strong><span>Usa el botón de esta ruta. Se abrirá un correo dirigido a Fabián con una pauta breve para contarnos el contexto.</span></li>
-        <li><strong>Te contactamos</strong><span>Desde la Unidad revisamos la solicitud y nos comunicamos contigo para profundizar en la necesidad.</span></li>
-        <li><strong>Definimos juntos la modalidad</strong><span>Acordamos si conviene una sesión, un taller integrado a una clase, un bloque libre o una secuencia de trabajo.</span></li>
-        <li><strong>Coordinamos e implementamos</strong><span>Definimos fecha, espacio y condiciones para llevar a cabo el apoyo.</span></li>
-      </ol>
-      <div class="ute-route-contact">
-        <p><strong>¿Esta es tu ruta?</strong> Escríbenos con el contexto de la necesidad. El correo ya incluye una pauta con la información que necesitamos para comenzar.</p>
-        <a class="ute-route-email-btn" href="mailto:fpulgar@uahurtado.cl?subject=Solicitud%20de%20apoyo%20a%20medida%20-%20Unidad%20de%20Trayectoria%20Estudiantil&body=Hola%20Fabi%C3%A1n%3A%0A%0AQuisiera%20solicitar%20un%20apoyo%20a%20medida%20para%20un%20curso%2C%20grupo%20o%20carrera.%0A%0APara%20que%20podamos%20revisar%20la%20necesidad%2C%20comparto%20la%20siguiente%20informaci%C3%B3n%3A%0A%0A-%20Carrera%3A%0A-%20Asignatura%20/%20espacio%20formativo%3A%0A-%20Curso%2C%20nivel%20o%20cohorte%3A%0A-%20Cantidad%20aproximada%20de%20estudiantes%3A%0A-%20Necesidad%20o%20situaci%C3%B3n%20que%20hemos%20identificado%3A%0A-%20%C2%BFQu%C3%A9%20nos%20gustar%C3%ADa%20fortalecer%20o%20trabajar%3F%3A%0A-%20%C2%BFExiste%20alguna%20tarea%2C%20evaluaci%C3%B3n%2C%20texto%20o%20actividad%20con%20la%20que%20ser%C3%ADa%20%C3%BAtil%20articular%20el%20apoyo%3F%3A%0A-%20Fechas%20o%20periodo%20en%20que%20nos%20gustar%C3%ADa%20realizarlo%3A%0A-%20Modalidad%20preferente%2C%20si%20ya%20la%20tenemos%20definida%3A%0A-%20Otro%20antecedente%20relevante%3A%0A%0AQuedo%20atento/a%20para%20que%20podamos%20conversar%20y%20definir%20juntos/as%20la%20modalidad%20de%20trabajo.%0A%0ASaludos%2C">✉ Escríbenos para solicitar apoyo a medida →</a>
-        <small>El mensaje se abrirá en tu aplicación de correo y podrás editarlo antes de enviarlo.<br><strong>Si el botón no funciona, escríbenos a:</strong> <a href="mailto:fpulgar@uahurtado.cl">fpulgar@uahurtado.cl</a></small>
-      </div>
-    </article>
-  </div>
-
-  <div class="ute-how-actions">
-    <button class="ute-how-secondary" type="button" id="btnNecesidadNoDefinida">Tengo una necesidad, pero no sé qué solicitar</button>
+    </details>
   </div>
 </section>
+
 
     <div class="lineas-heading">
       <h2>Explora por línea</h2>
