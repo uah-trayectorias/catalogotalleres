@@ -1991,301 +1991,716 @@
 
 
 
-<style id="ute-v18-clean-actions">
+
+
+
+<style id="ute-v19-service-button-clean">
+  .ute-fold-services > summary.ute-action-summary{
+    grid-template-columns:minmax(0,1fr) auto !important;
+    padding-left:18px !important;
+  }
+</style>
+
+
+<style id="ute-v21-teacher-intro">
+  .ute-teacher-intro{
+    max-width:82ch !important;
+    color:#272033 !important;
+    text-align:left !important;
+  }
+
+  .ute-teacher-intro > p{
+    margin:0 0 12px;
+    color:#272033;
+    line-height:1.58;
+  }
+
+  .ute-request-options{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    margin:12px 0 14px;
+  }
+
+  .ute-request-option{
+    display:grid;
+    grid-template-columns:36px minmax(0,1fr);
+    gap:11px;
+    align-items:start;
+    padding:14px;
+    border:1px solid var(--purple-200);
+    border-radius:16px;
+    background:var(--purple-50);
+  }
+
+  .ute-request-number{
+    width:34px;
+    height:34px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--purple-700);
+    color:#fff;
+    font-weight:900;
+    font-size:.88rem;
+  }
+
+  .ute-request-option strong{
+    display:block;
+    margin:2px 0 4px;
+    color:var(--purple-900);
+    font-size:.9rem;
+  }
+
+  .ute-request-option p{
+    margin:0;
+    color:#403857;
+    font-size:.84rem;
+    line-height:1.5;
+  }
+
+  .ute-request-contact{
+    margin-top:10px !important;
+    padding:11px 13px;
+    border-left:4px solid var(--green-600);
+    background:#f6f8ef;
+    border-radius:0 10px 10px 0;
+  }
+
+  @media(max-width:760px){
+    .ute-request-options{
+      grid-template-columns:1fr;
+    }
+  }
+</style>
+
+
+<style id="ute-v25-dark-mode">
   /* =========================================================
-     LIMPIEZA DEFINITIVA DEL SISTEMA DE DESPLEGABLES
-     Un solo componente, sin pseudo-elementos heredados.
+     MODO OSCURO REHECHO
      ========================================================= */
 
-  /* Mantener la portada más compacta */
-  #portalAcceso .portal-hero-body{
-    padding:22px 28px !important;
-  }
-  #portalAcceso .portal-hero-body h1{
-    font-size:clamp(2.15rem,4.8vw,3.45rem) !important;
-    line-height:1.04 !important;
-    margin-bottom:13px !important;
-    max-width:15ch;
-  }
-  #portalAcceso .portal-hero-body p{
-    font-size:.98rem !important;
-    line-height:1.58 !important;
-    margin:0 0 11px !important;
-    max-width:80ch !important;
+  #portalEstudiante[data-theme="dark"]{
+    --dark-bg:#171225;
+    --dark-surface:#211a34;
+    --dark-surface-2:#2a2141;
+    --dark-surface-3:#33284d;
+    --dark-border:#4a3b67;
+    --dark-text:#f7f4fb;
+    --dark-muted:#cfc8dd;
+    --dark-accent:#a989dd;
+
+    background:var(--dark-bg) !important;
+    color:var(--dark-text) !important;
   }
 
-  /* Texto docente: más oscuro y legible */
-  .ute-how-docente .ute-how-lead{
-    color:#272033 !important;
-    text-align:justify !important;
-    line-height:1.62 !important;
-    max-width:80ch !important;
+  #portalEstudiante[data-theme="dark"] .portal-shell{
+    background:var(--dark-bg) !important;
+    color:var(--dark-text) !important;
   }
 
-  /* CONTENEDORES */
-  details.ute-fold-services,
-  details.ute-fold-student-faq,
-  details.ute-action-fold{
-    display:block !important;
-    width:100% !important;
-    margin:16px 0 !important;
-    padding:0 !important;
-    border:0 !important;
+  /* Navegación y cabecera */
+  #portalEstudiante[data-theme="dark"] .ute-nav-btn{
+    background:var(--dark-surface) !important;
+    color:var(--dark-text) !important;
+    border-color:var(--dark-border) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .portal-logo-bar{
+    background:#fff !important;
+    border-color:#e7e0f2 !important;
+  }
+
+  /* Barra de accesibilidad */
+  #portalEstudiante[data-theme="dark"] .student-accessibility{
+    background:var(--dark-surface) !important;
+    border-color:var(--dark-border) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-accessibility-label{
+    color:#d9c8f5 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-a11y-btn{
+    background:var(--dark-surface-2) !important;
+    color:var(--dark-text) !important;
+    border-color:var(--dark-border) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-a11y-btn.is-active{
+    background:#fff !important;
+    color:#2a2141 !important;
+    border-color:#fff !important;
+  }
+
+  /* Introducción */
+  #portalEstudiante[data-theme="dark"] .student-intro{
     background:transparent !important;
     box-shadow:none !important;
-    overflow:visible !important;
+    color:var(--dark-text) !important;
   }
 
-  /* Desactivar para siempre iconos heredados generados por CSS */
-  details.ute-fold-services > summary::before,
-  details.ute-fold-services > summary::after,
-  details.ute-fold-student-faq > summary::before,
-  details.ute-fold-student-faq > summary::after,
-  details.ute-action-fold > summary::before,
-  details.ute-action-fold > summary::after{
-    content:none !important;
-    display:none !important;
+  #portalEstudiante[data-theme="dark"] .student-intro h1,
+  #portalEstudiante[data-theme="dark"] .student-intro p{
+    color:var(--dark-text) !important;
   }
 
-  /* BOTÓN */
-  details > summary.ute-action-summary{
-    box-sizing:border-box !important;
-    width:100% !important;
-    max-width:none !important;
-    min-height:66px !important;
-    margin:0 !important;
-    padding:12px 14px !important;
+  /* Sección cómo funciona */
+  #portalEstudiante[data-theme="dark"] .ute-how{
+    color:var(--dark-text) !important;
+  }
 
+  #portalEstudiante[data-theme="dark"] .ute-how-kicker{
+    color:#c3a9ec !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-how h2,
+  #portalEstudiante[data-theme="dark"] .ute-how-lead{
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-route::before{
+    opacity:.75;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-route-dot{
+    background:var(--dark-surface) !important;
+    color:#fff !important;
+    box-shadow:0 0 0 5px var(--dark-bg) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-route-step strong{
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-route-step small{
+    color:var(--dark-muted) !important;
+  }
+
+  /* Botón de FAQ */
+  #portalEstudiante[data-theme="dark"] .ute-action-summary{
+    background:linear-gradient(105deg,#5b3b91 0%,#754fb2 52%,#63409a 100%) !important;
+    color:#fff !important;
+    border-color:#7958ae !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-action-summary .ute-action-chip{
+    background:#fff !important;
+    color:#5c3a97 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-action-summary .ute-action-label,
+  #portalEstudiante[data-theme="dark"] .ute-action-summary .ute-action-icon{
+    color:#fff !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-fold-body{
+    background:var(--dark-surface) !important;
+    border-color:var(--dark-border) !important;
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-faq,
+  #portalEstudiante[data-theme="dark"] .ute-faq details{
+    border-color:var(--dark-border) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-faq summary{
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .ute-faq p{
+    color:var(--dark-muted) !important;
+  }
+
+  /* Título catálogo */
+  #portalEstudiante[data-theme="dark"] .student-catalog-toolbar h2,
+  #portalEstudiante[data-theme="dark"] .student-catalog-toolbar p{
+    color:var(--dark-text) !important;
+  }
+
+  /* Filtros */
+  #portalEstudiante[data-theme="dark"] .student-filter-btn{
+    background:var(--dark-surface) !important;
+    color:var(--dark-text) !important;
+    border-color:var(--dark-border) !important;
+    box-shadow:none !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-filter-btn:hover,
+  #portalEstudiante[data-theme="dark"] .student-filter-btn.is-active{
+    background:var(--dark-surface-3) !important;
+    border-color:#8b6bb9 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-filter-btn strong,
+  #portalEstudiante[data-theme="dark"] .student-filter-btn small{
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .filter-icon{
+    background:#3b2e58 !important;
+  }
+
+  /* FICHAS PRINCIPALES */
+  #portalEstudiante[data-theme="dark"] .support-card{
+    background:var(--dark-surface) !important;
+    border-color:var(--dark-border) !important;
+    box-shadow:0 10px 28px rgba(0,0,0,.18) !important;
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .support-card h3,
+  #portalEstudiante[data-theme="dark"] .support-card p,
+  #portalEstudiante[data-theme="dark"] .support-card strong,
+  #portalEstudiante[data-theme="dark"] .support-card small,
+  #portalEstudiante[data-theme="dark"] .support-subtitle,
+  #portalEstudiante[data-theme="dark"] .support-lead{
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .support-number{
+    color:#9f82cf !important;
+    opacity:.55 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-tag,
+  #portalEstudiante[data-theme="dark"] .line-badge{
+    background:#382b55 !important;
+    color:#e8dcfb !important;
+    border-color:#5a4677 !important;
+  }
+
+  /* Paneles dentro de cada apoyo */
+  #portalEstudiante[data-theme="dark"] .student-panel{
+    background:var(--dark-surface-2) !important;
+    border-color:var(--dark-border) !important;
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-panel h4{
+    color:#e8dcfb !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-panel ul,
+  #portalEstudiante[data-theme="dark"] .student-panel li{
+    color:var(--dark-text) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-panel:nth-child(2){
+    background:#253223 !important;
+    border-color:#4f6849 !important;
+  }
+
+  /* Atención individual */
+  #portalEstudiante[data-theme="dark"] .support-action{
+    border-color:var(--dark-border) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .support-action p{
+    color:var(--dark-muted) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .booking-placeholder{
+    background:#6e46b4 !important;
+    color:#fff !important;
+    border-color:#8767bd !important;
+  }
+
+  /* Evitar bloques blancos residuales */
+  #portalEstudiante[data-theme="dark"] .support-grid,
+  #portalEstudiante[data-theme="dark"] #studentCatalog,
+  #portalEstudiante[data-theme="dark"] .student-catalog-toolbar{
+    background:transparent !important;
+  }
+
+  /* Separadores */
+  #portalEstudiante[data-theme="dark"] hr,
+  #portalEstudiante[data-theme="dark"] .divider{
+    border-color:var(--dark-border) !important;
+  }
+
+  /* ALTO CONTRASTE: mantener aparte y legible */
+  #portalEstudiante[data-theme="contrast"]{
+    background:#000 !important;
+    color:#fff !important;
+  }
+
+  #portalEstudiante[data-theme="contrast"] .portal-shell,
+  #portalEstudiante[data-theme="contrast"] .support-card,
+  #portalEstudiante[data-theme="contrast"] .student-panel,
+  #portalEstudiante[data-theme="contrast"] .student-filter-btn,
+  #portalEstudiante[data-theme="contrast"] .ute-fold-body{
+    background:#000 !important;
+    color:#fff !important;
+    border-color:#fff !important;
+    box-shadow:none !important;
+  }
+
+  #portalEstudiante[data-theme="contrast"] .support-card *,
+  #portalEstudiante[data-theme="contrast"] .student-panel *,
+  #portalEstudiante[data-theme="contrast"] .student-filter-btn *,
+  #portalEstudiante[data-theme="contrast"] .ute-fold-body *{
+    color:#fff !important;
+  }
+</style>
+
+
+<style id="ute-v26-dark-student-cards-fix">
+  /* =========================================================
+     PARCHE REAL DEL MODO OSCURO PARA TARJETAS .card
+     ========================================================= */
+
+  #portalEstudiante[data-theme="dark"]{
+    --ink:#f7f4fb;
+    --text:#f7f4fb;
+    --muted:#cfc8dd;
+    --border:#4a3b67;
+  }
+
+  /* Tarjeta principal del catálogo estudiantil */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card{
+    background:#211a34 !important;
+    border-color:#4a3b67 !important;
+    box-shadow:0 12px 30px rgba(0,0,0,.22) !important;
+    color:#f7f4fb !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card:hover{
+    border-color:#7c62ad !important;
+    box-shadow:0 16px 34px rgba(0,0,0,.28) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card::before{
+    opacity:.95 !important;
+  }
+
+  /* Número grande */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card-num{
+    color:#8f72c2 !important;
+    opacity:.45 !important;
+  }
+
+  /* Encabezados y textos */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card h2,
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card .lead,
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card .kicker,
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card p,
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card li{
+    color:#f7f4fb !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .card .kicker{
+    color:#cfc8dd !important;
+  }
+
+  /* Etiquetas superiores */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .badge-prog{
+    background:#31254a !important;
+    color:#eadffc !important;
+    border-color:#5a4677 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .badge-mod{
+    background:#2a2141 !important;
+    color:#e7dcfa !important;
+    border-color:#5a4677 !important;
+  }
+
+  /* Paneles */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel{
+    background:#2a2141 !important;
+    border-color:#4a3b67 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel h3{
+    color:#eadffc !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel li{
+    color:#f7f4fb !important;
+  }
+
+  /* Variaciones por panel, sin perder coherencia */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel.needs{
+    background:#2d2543 !important;
+    border-color:#5d4b80 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel.learns{
+    background:#243224 !important;
+    border-color:#4f6849 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel.learns h3{
+    color:#d7efcf !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .panel.cuando{
+    background:#2b223f !important;
+    border-color:#5a4677 !important;
+  }
+
+  /* Nota y botón */
+  #portalEstudiante[data-theme="dark"] #studentCatalog .student-mode-note{
+    background:#2b223f !important;
+    border-color:#58457b !important;
+    color:#f1ebfb !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .student-mode-note strong{
+    color:#ffffff !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .student-booking-btn{
+    background:#6e46b4 !important;
+    color:#fff !important;
+    box-shadow:0 8px 22px rgba(44,23,84,.34) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] #studentCatalog .student-booking-btn:hover{
+    filter:brightness(1.06) !important;
+  }
+
+  /* Tarjetas extra */
+  #portalEstudiante[data-theme="dark"] .extra-support-card{
+    background:#211a34 !important;
+    color:#f7f4fb !important;
+    border-color:#4a3b67 !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.18) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .extra-support-card strong,
+  #portalEstudiante[data-theme="dark"] .extra-support-card small{
+    color:#f7f4fb !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .extra-icon{
+    background:#31254a !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .extra-arrow{
+    color:#e8dcfb !important;
+  }
+
+  /* Filtros: afinar contraste */
+  #portalEstudiante[data-theme="dark"] .student-filter-btn{
+    background:#211a34 !important;
+    color:#f7f4fb !important;
+    border-color:#4a3b67 !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .student-filter-btn.is-active{
+    background:#31254a !important;
+    border-color:#8b6bb9 !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.18) !important;
+  }
+
+  #portalEstudiante[data-theme="dark"] .filter-copy strong,
+  #portalEstudiante[data-theme="dark"] .filter-copy small{
+    color:#f7f4fb !important;
+  }
+
+  /* Alto contraste para estas mismas tarjetas */
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .card,
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .panel,
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .student-mode-note,
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .student-booking-btn,
+  #portalEstudiante[data-theme="contrast"] .extra-support-card{
+    background:#000 !important;
+    color:#fff !important;
+    border:2px solid #fff !important;
+    box-shadow:none !important;
+  }
+
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .card *,
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .panel *,
+  #portalEstudiante[data-theme="contrast"] #studentCatalog .student-mode-note *,
+  #portalEstudiante[data-theme="contrast"] .extra-support-card *{
+    color:#fff !important;
+  }
+</style>
+
+
+<style id="ute-v27-buttons-and-home-text-fix">
+  /* =========================================================
+     AJUSTE 1 · Texto acompañante del bloque principal
+     ========================================================= */
+  #portalAcceso .portal-hero > .news-host .ute-bulletin-main span{
+    font-size:1rem !important;
+    line-height:1.68 !important;
+    max-width:52ch !important;
+    color:#4a4259 !important;
+  }
+
+  #portalAcceso .portal-hero > .news-host .ute-bulletin-main strong{
+    line-height:1.08 !important;
+  }
+
+  @media(max-width:820px){
+    #portalAcceso .portal-hero > .news-host .ute-bulletin-main span{
+      font-size:.98rem !important;
+      line-height:1.62 !important;
+    }
+  }
+
+  /* =========================================================
+     AJUSTE 2 · Restaurar botones desplegables
+     ========================================================= */
+  .ute-fold{
+    margin:18px 0 0;
+  }
+
+  .ute-fold > summary.ute-action-summary{
+    list-style:none !important;
     display:grid !important;
     grid-template-columns:auto minmax(0,1fr) auto !important;
     align-items:center !important;
     column-gap:14px !important;
-
-    list-style:none !important;
-    cursor:pointer !important;
-
-    background:linear-gradient(105deg,#56358f 0%,#6e46b4 52%,#60409d 100%) !important;
+    width:100% !important;
+    min-height:74px !important;
+    padding:14px 18px !important;
+    border-radius:20px !important;
+    border:1px solid #c9b8e5 !important;
+    background:linear-gradient(90deg,#6a40b1 0%, #7c53c0 50%, #6d45b5 100%) !important;
+    box-shadow:0 10px 24px rgba(58,36,97,.14) !important;
     color:#fff !important;
-    border:1px solid #56358f !important;
-    border-radius:18px !important;
-
-    box-shadow:
-      0 10px 25px rgba(83,51,140,.22),
-      inset 0 1px 0 rgba(255,255,255,.10) !important;
-
-    font-family:var(--font-body) !important;
-    transition:
-      transform .18s ease,
-      box-shadow .18s ease,
-      filter .18s ease !important;
+    cursor:pointer !important;
+    user-select:none !important;
+    -webkit-user-select:none !important;
+    outline:none !important;
     position:relative !important;
   }
 
-  details > summary.ute-action-summary::-webkit-details-marker{
+  .ute-fold > summary.ute-action-summary::-webkit-details-marker{
+    display:none !important;
+  }
+  .ute-fold > summary.ute-action-summary::marker{
+    content:'' !important;
     display:none !important;
   }
 
-  /* CHIP: señal explícita de acción */
-  .ute-action-summary .ute-action-chip{
+  .ute-fold > summary.ute-action-summary:hover{
+    transform:translateY(-1px);
+    box-shadow:0 12px 28px rgba(58,36,97,.18) !important;
+  }
+
+  .ute-fold > summary.ute-action-summary:focus-visible{
+    outline:3px solid rgba(113,62,177,.22) !important;
+    outline-offset:3px !important;
+  }
+
+  .ute-action-chip{
     display:inline-flex !important;
     align-items:center !important;
     justify-content:center !important;
     min-height:34px !important;
-    padding:7px 11px !important;
+    padding:7px 14px !important;
     border-radius:999px !important;
-
     background:#fff !important;
-    color:#5c3a97 !important;
-
-    font-size:.69rem !important;
+    color:#6541ac !important;
+    font-size:.78rem !important;
     font-weight:900 !important;
-    line-height:1 !important;
-    letter-spacing:.075em !important;
+    letter-spacing:.08em !important;
+    text-transform:uppercase !important;
     white-space:nowrap !important;
-
-    box-shadow:0 3px 8px rgba(31,21,53,.13) !important;
-    animation:uteChipAttention 2.4s ease-in-out infinite;
+    box-shadow:0 1px 4px rgba(20,16,35,.08) !important;
   }
 
-  /* TEXTO */
-  .ute-action-summary .ute-action-label{
+  .ute-action-label{
     display:block !important;
     min-width:0 !important;
     color:#fff !important;
-    font-size:1rem !important;
+    font-size:1.08rem !important;
     font-weight:800 !important;
-    line-height:1.3 !important;
-    text-align:left !important;
-    opacity:1 !important;
-    visibility:visible !important;
+    line-height:1.28 !important;
+    letter-spacing:.005em !important;
   }
 
-  /* CHEVRON explícito en HTML */
-  .ute-action-summary .ute-action-icon{
-    display:grid !important;
-    place-items:center !important;
+  .ute-action-icon{
     width:42px !important;
     height:42px !important;
-    min-width:42px !important;
-    border-radius:50% !important;
-
-    background:rgba(255,255,255,.20) !important;
+    display:grid !important;
+    place-items:center !important;
+    border-radius:999px !important;
+    background:rgba(255,255,255,.17) !important;
     border:1px solid rgba(255,255,255,.22) !important;
     color:#fff !important;
-
-    font-size:1.55rem !important;
+    font-size:1.35rem !important;
     font-weight:900 !important;
     line-height:1 !important;
-
-    box-shadow:0 0 0 0 rgba(255,255,255,.14) !important;
-    animation:uteArrowAttention 1.35s ease-in-out infinite;
-    transition:transform .22s ease, background .18s ease !important;
+    transition:transform .18s ease, background .18s ease !important;
+    flex:0 0 auto !important;
   }
 
-  details > summary.ute-action-summary:hover{
-    transform:translateY(-2px) !important;
-    filter:brightness(1.055) !important;
-    box-shadow:
-      0 15px 32px rgba(83,51,140,.28),
-      0 0 0 3px rgba(110,70,180,.08) !important;
-  }
-
-  details > summary.ute-action-summary:hover .ute-action-icon{
-    background:rgba(255,255,255,.30) !important;
-  }
-
-  details[open] > summary.ute-action-summary .ute-action-icon{
+  .ute-fold[open] > summary.ute-action-summary .ute-action-icon{
     transform:rotate(180deg) !important;
-    animation:none !important;
+    background:rgba(255,255,255,.22) !important;
   }
 
-  /* CUERPO ABIERTO */
-  details.ute-fold-services > .ute-fold-body,
-  details.ute-fold-student-faq > .ute-fold-body,
-  details.ute-action-fold > .ute-fold-body{
-    margin:9px 0 0 !important;
-    padding:18px !important;
-
+  .ute-fold-body{
+    margin-top:10px !important;
+    padding:18px 18px 6px !important;
+    border:1px solid #e0d6ef !important;
+    border-radius:18px !important;
     background:#fff !important;
-    border:1px solid var(--border) !important;
-    border-radius:16px !important;
-    box-shadow:0 8px 20px rgba(15,23,42,.055) !important;
+    box-shadow:0 4px 14px rgba(24,16,40,.04) !important;
   }
 
-  /* Las dos rutas, parejas */
-  .ute-route-buttons{
-    display:grid !important;
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-    gap:14px !important;
-    align-items:start !important;
-    margin-top:14px !important;
+  /* Variante clara para el botón de la portada "Servicios de la Unidad" si reaparece */
+  .ute-fold-services > summary.ute-action-summary{
+    background:linear-gradient(90deg,#6a40b1 0%, #7c53c0 55%, #6d45b5 100%) !important;
   }
 
-  /* FAQ estudiante ocupa exactamente el ancho del contenido */
-  #comoFuncionaEstudiantes details.ute-fold-student-faq{
-    width:100% !important;
-    max-width:none !important;
-    margin-left:0 !important;
-    margin-right:0 !important;
+  /* En modo oscuro también deben verse como botones reales */
+  #portalEstudiante[data-theme="dark"] .ute-fold > summary.ute-action-summary{
+    background:linear-gradient(90deg,#5a3a90 0%, #7048af 55%, #5d3e96 100%) !important;
+    border-color:#7a62a7 !important;
+    box-shadow:0 12px 28px rgba(0,0,0,.22) !important;
   }
 
-  /* Recuperar buen contraste de fichas en modo oscuro */
-  #portalEstudiante[data-theme="dark"] .support-card,
-  #portalEstudiante[data-theme="dark"] .student-panel,
-  #portalEstudiante[data-theme="dark"] .booking-placeholder{
-    background:#2a2144 !important;
-    border-color:rgba(255,255,255,.18) !important;
-    color:#fff !important;
+  #portalEstudiante[data-theme="dark"] .ute-action-chip{
+    background:#fff !important;
+    color:#5d3e96 !important;
   }
 
-  #portalEstudiante[data-theme="dark"] .support-card *,
-  #portalEstudiante[data-theme="dark"] .student-panel *,
-  #portalEstudiante[data-theme="dark"] .support-action p{
-    color:#fff !important;
-  }
-
-  #portalEstudiante[data-theme="dark"] details.ute-fold-student-faq > .ute-fold-body{
-    background:#2a2144 !important;
-    border-color:rgba(255,255,255,.18) !important;
-    color:#fff !important;
-  }
-
-  #portalEstudiante[data-theme="contrast"] .support-card,
-  #portalEstudiante[data-theme="contrast"] .student-panel,
-  #portalEstudiante[data-theme="contrast"] .booking-placeholder,
-  #portalEstudiante[data-theme="contrast"] details.ute-fold-student-faq > .ute-fold-body{
-    background:#000 !important;
-    color:#fff !important;
-    border:2px solid #fff !important;
-  }
-
-  #portalEstudiante[data-theme="contrast"] .support-card *,
-  #portalEstudiante[data-theme="contrast"] .student-panel *{
-    color:#fff !important;
-  }
-
-  /* Animación visible pero sobria */
-  @keyframes uteArrowAttention{
-    0%,100%{
-      transform:translateY(-2px);
-      box-shadow:0 0 0 0 rgba(255,255,255,.14);
-    }
-    50%{
-      transform:translateY(4px);
-      box-shadow:0 0 0 9px rgba(255,255,255,.055);
-    }
-  }
-
-  @keyframes uteChipAttention{
-    0%,100%{
-      transform:scale(1);
-      box-shadow:0 3px 8px rgba(31,21,53,.13);
-    }
-    50%{
-      transform:scale(1.045);
-      box-shadow:0 4px 12px rgba(31,21,53,.19);
-    }
-  }
-
-  @media(max-width:900px){
-    .ute-route-buttons{
-      grid-template-columns:1fr !important;
-    }
+  #portalEstudiante[data-theme="dark"] .ute-fold-body{
+    background:#211a34 !important;
+    border-color:#4a3b67 !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.18) !important;
   }
 
   @media(max-width:720px){
-    #portalAcceso .portal-hero-body{
-      padding:20px 18px !important;
+    .ute-fold > summary.ute-action-summary{
+      grid-template-columns:1fr auto !important;
+      row-gap:10px !important;
+      padding:14px 15px !important;
     }
 
-    details > summary.ute-action-summary{
-      min-height:62px !important;
-      padding:10px 11px !important;
-      column-gap:9px !important;
-    }
-
-    .ute-action-summary .ute-action-chip{
+    .ute-action-chip{
+      grid-column:1 !important;
+      justify-self:start !important;
       min-height:30px !important;
-      padding:6px 8px !important;
-      font-size:.62rem !important;
+      padding:6px 12px !important;
+      font-size:.74rem !important;
     }
 
-    .ute-action-summary .ute-action-label{
-      font-size:.9rem !important;
+    .ute-action-label{
+      grid-column:1 !important;
+      font-size:1rem !important;
+      line-height:1.28 !important;
     }
 
-    .ute-action-summary .ute-action-icon{
-      width:36px !important;
-      height:36px !important;
-      min-width:36px !important;
-      font-size:1.3rem !important;
+    .ute-action-icon{
+      grid-column:2 !important;
+      grid-row:1 / span 2 !important;
+      align-self:center !important;
+      width:40px !important;
+      height:40px !important;
     }
-  }
 
-  @media(prefers-reduced-motion:reduce){
-    .ute-action-summary .ute-action-chip,
-    .ute-action-summary .ute-action-icon{
-      animation:none !important;
+    .ute-fold-body{
+      padding:16px 14px 4px !important;
     }
   }
 </style>
@@ -2331,60 +2746,6 @@
     </button>
   </div>
 
-
-  
-  <details class="ute-fold ute-fold-services">
-    <summary class="ute-action-summary"><span class="ute-action-chip">VER SERVICIOS</span><span class="ute-action-label">Servicios de la Unidad</span><span class="ute-action-icon" aria-hidden="true">⌄</span></summary>
-    <div class="ute-fold-body">
-      <p class="ute-fold-caption">Aquí puedes revisar los principales apoyos disponibles y acceder directamente al sistema de agendamiento de apoyos individuales.</p>
-      <section class="ute-home-services" aria-labelledby="uteHomeServicesTitle">
-    <div class="ute-home-services-head ute-home-services-head-split">
-      <div>
-        <p class="ute-home-services-kicker">Ver servicios de la Unidad</p>
-        <h2 id="uteHomeServicesTitle">¿Qué apoyos puedes encontrar aquí?</h2>
-        <p>La Unidad de Trayectoria Estudiantil ofrece apoyos para estudiantes, cursos y carreras, a través de distintas modalidades de acompañamiento.</p>
-      </div>
-      <a class="ute-home-booking-btn" href="https://bookings.cloud.microsoft/book/AgendaUnidaddeTrayectoriaEstudiantil@uahurtado.cl/?ismsaljsauthenabled" target="_blank" rel="noopener">Agendar Apoyos Individuales →</a>
-    </div>
-
-    <div class="ute-home-services-grid">
-      <article class="ute-home-service-card">
-        <span class="ute-home-service-tag">Mentorías académicas</span>
-        <h3>Apoyos para fortalecer habilidades clave de aprendizaje</h3>
-        <ul>
-          <li>Lectura</li>
-          <li>Escritura</li>
-          <li>Comunicación oral</li>
-          <li>Acompañamiento a la escritura de tesis</li>
-          <li>Matemática</li>
-          <li>Física</li>
-        </ul>
-      </article>
-
-      <article class="ute-home-service-card">
-        <span class="ute-home-service-tag">Consejerías psicoeducativas</span>
-        <h3>Acompañamiento para el bienestar y la trayectoria académica</h3>
-        <ul>
-          <li>Gestión del estrés académico</li>
-          <li>Motivación académica</li>
-          <li>Organización y hábitos de estudio</li>
-          <li>Orientación en momentos de sobrecarga o dificultad</li>
-        </ul>
-      </article>
-
-      <article class="ute-home-service-card">
-        <span class="ute-home-service-tag">Otros apoyos</span>
-        <h3>Servicios complementarios de acompañamiento</h3>
-        <ul>
-          <li>Ajustes razonables</li>
-          <li>Talleres y sesiones para cursos o grupos</li>
-          <li>Apoyos articulados con docentes, coordinaciones y direcciones</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-    </div>
-  </details>
 
 </div>
 
@@ -2543,7 +2904,33 @@
   <div class="ute-how-head"><div>
     <p class="ute-how-kicker">Para equipos directivos y docentes</p>
     <h2 id="comoFuncionaEquiposTitulo">¿Cómo funcionan los talleres y sesiones?</h2>
-    <p class="ute-how-lead">Hay dos maneras de solicitar apoyo. La primera es agendar una sesión del catálogo. La segunda es pedir un apoyo a medida, cuando la necesidad requiere definir modalidad, ajustes o una secuencia de trabajo. En ambos casos, desde la Unidad te contactamos para coordinar.</p>
+    
+<div class="ute-how-lead ute-teacher-intro">
+  <p><strong>Estos apoyos pueden ser gestionados por docentes, coordinaciones y direcciones para trabajar con cursos completos o grupos de estudiantes.</strong></p>
+
+  <p>Para solicitar un apoyo tienes dos alternativas:</p>
+
+  <div class="ute-request-options" aria-label="Formas de solicitar apoyo">
+    <div class="ute-request-option">
+      <span class="ute-request-number">1</span>
+      <div>
+        <strong>Elegir una sesión del catálogo</strong>
+        <p>Si alguna de las sesiones disponibles responde a lo que necesita tu curso, puedes seleccionarla y solicitar su implementación.</p>
+      </div>
+    </div>
+
+    <div class="ute-request-option">
+      <span class="ute-request-number">2</span>
+      <div>
+        <strong>Solicitar un apoyo a medida</strong>
+        <p>Si necesitas trabajar una situación más específica, podemos diseñar contigo una propuesta ajustada al contexto de la asignatura, al grupo de estudiantes o a una secuencia de trabajo.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="ute-request-contact"><strong>En ambos casos, una vez recibida tu solicitud, desde la Unidad nos contactamos contigo para coordinar fecha, modalidad, espacio y otros aspectos de implementación.</strong></p>
+</div>
+
   </div></div>
 
   <div class="ute-route-buttons">
